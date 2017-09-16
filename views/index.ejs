@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Pizza Page</title>
+	<meta name="description" content="Test page">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<!-- // <script type="text/javascript" src="script.js"></script> -->
+	<script src="jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				type: 'GET', 
+				url: 'https://swapi.co/api/films/', 
+				data: '',  
+				beforeSend: function(){
+					console.log("Sending a request to get all films");
+				},
+				success: function(res){
+					console.log('The response object:');
+					console.log(res);
+					if(res['results'].length !== 0) {
+						// JSON.parse()
+						html_string = JSON.stringify(res['results']);
+						console.log(html_string);
+					} else {
+						html_string = "Not Found";
+					}
+					$('#result').html(html_string);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>A list of all Starwors movies grouped by director:</h2>
+	<div id="result"></div>
+</body>
+</html>
