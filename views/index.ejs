@@ -19,16 +19,28 @@
 					console.log("Sending a request to get all films");
 				},
 				success: function(res){
+					var html_string = '', 
+						result = '', 
+						directors = {};
 					console.log('The response object:');
 					console.log(res);
 					if(res['results'].length !== 0) {
 						// JSON.parse()
 						html_string = JSON.stringify(res['results']);
-						console.log(html_string);
+						// console.log(html_string);
+						for (var i = 0; i < res['results'].length; i++){
+							if (!directors.hasOwnProperty(res['results'][i].director)){
+								directors[res['results'][i].director] = res['results'][i].title;
+							} else {
+								directors[res['results'][i].director] += " , " + res['results'][i].title;
+							}
+						}
+						console.log(directors);
 					} else {
 						html_string = "Not Found";
 					}
-					$('#result').html(html_string);
+					result = JSON.stringify(directors);
+					$('#result').html(result);
 				}
 			});
 		});
