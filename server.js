@@ -18,24 +18,3 @@ require('./server/config/routes.js')(app);
 app.listen(8000, ()=>{
 	console.log('Listening on port 8000');
 });
-
-
-/*
-
-var io = require('socket.io').listen(server);
-
-io.sockets.on('connection', function (socket) {
-	console.log("WE ARE USING SOCKETS!");
-	console.log(socket.id);
-	
-	socket.on("posting_form", function(data){
-		// setting the random number
-		var rand = Math.floor(Math.random()*(1000-1+1)-1);
-		// passing two actions to the spesific user with data
-		socket.emit("updated_message", {response: "You emitted the following information to the server: ", info: data});
-		socket.emit("random_number", {random: "Your lucky number emitted by server is "+ rand})
-	});
-
-	
-});
-*/

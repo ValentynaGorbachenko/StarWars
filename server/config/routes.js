@@ -6,6 +6,6 @@ const apiController = require('./../controllers/apiController.js');
 module.exports = (app)=>{
 	app.get('/', mainController.index);
 	app.get('/movies/:id/names', apiController.getNames);
-	app.get('/getdata', apiController.getData);
+	// app.get('/getdata', apiController.getData); // testing route
 
 };
