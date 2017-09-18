@@ -19,15 +19,13 @@
 					console.log("Sending a request to get all films");
 				},
 				success: function(res){
-					var html_string = '', 
-						result = '', 
-						directors = {};
+					var result = '', 
+						directors = {}, // my first understanding of the task
+						listOfMoviesByDirector = []; // my second understanding of the task 
 					console.log('The response object:');
 					console.log(res);
 					if(res['results'].length !== 0) {
-						// JSON.parse()
-						html_string = JSON.stringify(res['results']);
-						// console.log(html_string);
+						// loop for directors variable
 						for (var i = 0; i < res['results'].length; i++){
 							if (!directors.hasOwnProperty(res['results'][i].director)){
 								directors[res['results'][i].director] = res['results'][i].title;
@@ -35,11 +33,20 @@
 								directors[res['results'][i].director] += " , " + res['results'][i].title;
 							}
 						}
-						console.log(directors);
+						// loop for a listOfMoviesByDirector variable
+						for (var j = 0; j < res['results'].length; j++){
+							listOfMoviesByDirector.push({title: res['results'][j].title, movie_id:res['results'][j].url[27], director: res['results'][j].director});
+						}
+						listOfMoviesByDirector.sort(function(a, b) {
+						    var textA = a.director.toUpperCase();
+						    var textB = b.director.toUpperCase();
+						    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+						});	
 					} else {
-						html_string = "Not Found";
+						result = "Not Found";
 					}
-					result = JSON.stringify(directors);
+					// result = JSON.stringify(directors);
+					result = JSON.stringify(listOfMoviesByDirector);
 					$('#result').html(result);
 				}
 			});
