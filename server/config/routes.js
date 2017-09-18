@@ -1,5 +1,5 @@
-// routes.js pizza project
-console.log('routes.js pizza project');
+// routes.js StarWars project
+console.log('routes.js StarWars project');
 'use strict';
 const mainController = require('./../controllers/mainController.js');
 const apiController = require('./../controllers/apiController.js');

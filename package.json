@@ -1,13 +1,21 @@
 {
-  "name": "pizza",
+  "name": "StarWars",
   "version": "1.0.0",
   "description": "web service and api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValentynaGorbachenko/StarWars.git"
+  },
+  "author": "ValentynaGorbachenko <gorbachenko.valentyna@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ValentynaGorbachenko/StarWars/issues"
+  },
+  "homepage": "https://github.com/ValentynaGorbachenko/StarWars#readme",
   "dependencies": {
     "body-parser": "^1.18.1",
     "ejs": "^2.5.7",

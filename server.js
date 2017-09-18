@@ -1,6 +1,6 @@
 // server.js  pizza project
 'use strict';
-console.log('server.js  pizza project');
+console.log('server.js  StarWars project');
 const express = require('express'),
 	path = require('path'),
 	bp = require('body-parser');

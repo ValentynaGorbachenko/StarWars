@@ -2,7 +2,7 @@
 
 module.exports = (()=>{
 	'use strict';
-	console.log('apiController.js pizza project');
+	console.log('apiController.js StarWars project');
 	const people = require('./../data/people.js'),
 		films = require('./../data/films.js'),
 		error = require('./../data/error.js');

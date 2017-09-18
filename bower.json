@@ -1,6 +1,7 @@
 {
   "name": "pizza",
   "description": "web service and api",
+  "homepage": "https://github.com/ValentynaGorbachenko/StarWars",
   "main": "index.js",
   "authors": [
     "ValentynaGorbachenko <gorbachenko.valentyna@gmail.com>"
